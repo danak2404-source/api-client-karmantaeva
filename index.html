@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Client — Karmantaeva Dana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Клиент Публичного API (JSONPlaceholder)</h1>
+
+    <!-- Панель управления: Поиск и параллельные запросы -->
+    <div class="controls card">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Поиск по ID пользователя (например, 1-10)...">
+        <button id="search-btn" class="btn btn-primary">Найти</button>
+        <button id="reset-btn" class="btn btn-secondary">Сбросить</button>
+      </div>
+      <div class="parallel-box">
+        <button id="parallel-btn" class="btn btn-success">Загрузить данные параллельно (Promise.all)</button>
+      </div>
+    </div>
+
+    <!-- Индикатор загрузки -->
+    <div id="loading" class="hidden">Загрузка данных с сервера...</div>
+
+    <!-- Сообщение об ошибке -->
+    <div id="error-message" class="hidden error-box"></div>
+
+    <!-- Результаты Promise.all -->
+    <div id="parallel-results" class="card hidden">
+      <h3>Результаты параллельного запроса (Пользователи + Посты)</h3>
+      <div id="parallel-content"></div>
+    </div>
+
+    <!-- Блок детального просмотра одного элемента -->
+    <div id="detail-card" class="card hidden">
+      <h3>Детальная информация о посте</h3>
+      <div id="detail-content"></div>
+      <button id="close-detail-btn" class="btn btn-secondary">Закрыть детали</button>
+    </div>
+
+    <!-- Список постов -->
+    <section class="card">
+      <h2>Список постов</h2>
+      <div id="posts-container" class="posts-grid">
+        <!-- Карточки постов будут рендериться сюда -->
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
